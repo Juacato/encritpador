@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --color-primario: #F3F5FC;
+    --color-secundario: #0A3871;
+    --color-terciario: #D8DFE8;
+    --color-instruccion: #495057;
+    --fuente-inter: "Inter", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-primario);
+    font-family: var(--fuente-inter);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.logo {
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 120px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.text__area, .mensaje {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    color: var(--color-secundario);
+}
+
+.text__area {
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.text__area::placeholder {
+    color: var(--color-secundario);
+}
+
+.text__area:focus, .mensaje:focus {
+    outline: none;
+}
+
+.instruccion {
+    font-size: 14px;
+    color: var(--color-instruccion);
+    margin-top: 8px;
+}
+
+.mensaje {
+    background-color: #ffffff;
+    background-image: url('../assets/muñeco.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    min-height: 300px;
+    margin-top: 20px;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mensaje:not(:placeholder-shown) {
+    background-image: none;
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn__encriptar, .btn__desencriptar, .copiar {
+    padding: 15px 25px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn__encriptar {
+    background-color: var(--color-secundario);
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn__desencriptar, .copiar {
+    background-color: var(--color-terciario);
+    color: var(--color-secundario);
+    border: 1px solid var(--color-secundario);
+}
+
+.btn__encriptar:hover, .btn__desencriptar:hover, .copiar:hover {
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-terciario);
+    color: var(--color-secundario);
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .text__area, .mensaje {
+        font-size: 16px;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+}
